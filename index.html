@@ -1,100 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ajay Kumar Rajamundry - Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Know About Me Game</title>
+    <!-- Google Fonts - Quicksand -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            font-family: 'Open Sans', sans-serif;
-            background-color: #000;
-            color: #fff;
+            background-color: #2A9D8F;
+            font-family: 'Quicksand', sans-serif;
+            /* Applying Quicksand font */
         }
-        .navbar {
-            background-color: #111;
+
+        .container {
+            margin-top: 25vh;
         }
-        .btn-custom {
-            background-color: #fff;
-            color: #000;
+
+        .card-container {
+            width: 100%;
+            max-width: 50vw;
+            margin: auto;
+            padding: 20px;
+            background: #fefae0;
+            border-radius: 15px;
+            position: relative;
+            background-color: #fefae0;
+        }
+
+        .card-content {
+            font-size: 1.2rem;
+            text-align: center;
+            padding: 25px;
+            color: #333;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn {
+            font-size: 1.1rem;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-next {
+            background-color: #E76F51;
+            color: white;
+        }
+
+        .btn-next:hover {
+            color: white;
+            background-color: #E76F51;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5rem;
+            background-color: transparent;
             border: none;
+            color: #bc6c25;
+            cursor: pointer;
         }
-        .btn-custom:hover {
-            background-color: #ddd;
+
+        .close-btn:hover {
+            color: #bc6c25;
         }
     </style>
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">Ajay Kumar Rajamundry</a>
+
+    <div class="container">
+        <div class="card-container">
+            <!-- Close button -->
+            <button class="close-btn" onclick="endGame()">&times;</button>
+            <div class="card-content" id="card-content">
+                <p>Click 'Start Game' to begin!</p>
+            </div>
+            <div class="card-footer">
+                <button id="nextBtn" class="btn btn-next" onclick="nextCard()">Start Game</button>
+            </div>
         </div>
-    </nav>
-    
-    <section class="container text-center py-5">
-        <h1>Ajay Kumar Rajamundry</h1>
-        <p class="lead">Software Developer | Certified Scrum Master</p>
-        <p>Jonkoping, Sweden | ajayraj2187@gmail.com | <a href="https://linkedin.com/in/ajay-kumar-rajamundry" target="_blank">LinkedIn</a> | <a href="https://github.com/Ajay2123" target="_blank">GitHub</a></p>
-    </section>
-    
-    <section class="container py-5">
-        <h2 class="text-center">Key Competencies</h2>
-        <ul>
-            <li>Angular, React.js, HTML, CSS, JavaScript, Node.js, TypeScript</li>
-            <li>AWS (S3, Dynamo, Cognito, CloudFormation, etc.), Serverless (Lambda, YML)</li>
-            <li>CI/CD (Bitbucket Pipelines), Agile Methodology (Scrum, Kanban)</li>
-            <li>Technical Research, POC, Estimates, Ownership, Adaptability, Communication</li>
-        </ul>
-    </section>
-    
-    <section class="container py-5">
-        <h2 class="text-center">Experience</h2>
-        <h3>Troax | Knowit AB – Software Developer (2019-2024)</h3>
-        <ul>
-            <li>Developed 7 platforms serving over 5000 users with minimal operational costs.</li>
-            <li>Led serverless microservices development, automated system checkups reducing workload by 10-12 hours/month.</li>
-            <li>Managed CI/CD pipelines, ensuring secure and efficient deployments.</li>
-        </ul>
-        <h3>Nybergs Bil | Knowit AB – Architect / Technical Manager (2024)</h3>
-        <ul>
-            <li>Led a team of 3 master's students to develop a POC in 9 weeks.</li>
-            <li>Developed a platform for generating car sales ads using registration numbers.</li>
-        </ul>
-        <h3>Green House | Knowit AB – Technical Advisor (2022-2024)</h3>
-        <ul>
-            <li>Managed internal team operations, code migrations, and consultant assignments.</li>
-            <li>Implemented organizational-wide structures for consultant engagements.</li>
-        </ul>
-    </section>
-    
-    <section class="container py-5">
-        <h2 class="text-center">Projects</h2>
-        <h3>Adishiksha – Full Stack Developer (2022-2023)</h3>
-        <ul>
-            <li>Developed and managed a CMS platform for educational institutions.</li>
-            <li>Designed CI/CD pipelines with SSL certifications for smooth deployments.</li>
-        </ul>
-        <h3>Limestone – Full Stack Developer (2019)</h3>
-        <ul>
-            <li>Created a restaurant suggestion web app with global scaling.</li>
-            <li>Integrated MapBox API for enhanced location-based services.</li>
-        </ul>
-    </section>
-    
-    <section class="container py-5">
-        <h2 class="text-center">Certifications and Awards</h2>
-        <ul>
-            <li>Scrum Master SAFe 6.0 (2024)</li>
-            <li>Best Team | Cybercom (2020)</li>
-            <li>Site Vision Developer | Site Vision (2019)</li>
-        </ul>
-    </section>
-    
-    <footer class="text-center py-3">
-        <p>&copy; 2025 Ajay Kumar Rajamundry</p>
-    </footer>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </div>
+
+    <script>
+        const moments = [
+            "First day of school",
+            "Favorite childhood game",
+            "First big achievement",
+            "Funniest childhood memory",
+            "Festival celebration at home",
+            "First crush & how it ended",
+            "A secret you kept from parents",
+            "A time you felt extremely proud",
+            "A moment you felt truly scared",
+            "Most awkward teenage moment",
+            "First heartbreak experience",
+            "A big fight with a friend",
+            "A time you felt guilty",
+            "Most rebellious act as a teen",
+            "A life lesson your parents taught you",
+            "First job interview experience",
+            "The moment you realized you were an adult",
+            "Wedding day memory that stood out",
+            "Funniest marriage moment",
+            "A financial mistake you regret",
+            "A career decision that changed your life",
+            "A time society made you feel pressured",
+            "A major lifestyle change you experienced",
+            "A spiritual or religious realization",
+            "A childhood dream that didn’t come true",
+            "A time you helped someone in need",
+            "A memory of dealing with anxiety or stress",
+            "The happiest moment with your spouse",
+            "A time relatives gave unwanted advice",
+            "A moment that made you rethink your life choices",
+            "Your first salary and how you spent it",
+            "The most embarrassing moment in school",
+            "A day you wish you could relive",
+            "A regret from your teenage years",
+            "A family trip that you’ll never forget",
+            "A lesson learned from a mistake",
+            "A childhood fear that still affects you",
+            "A festival memory that made you emotional",
+            "Your most memorable birthday",
+            "The first time you traveled alone",
+            "A difficult goodbye you had to say",
+            "The first time you got really angry",
+            "A moment when you felt completely lost",
+            "A time when someone supported you unexpectedly",
+            "The first gift you ever bought for someone",
+            "A dream you are still chasing",
+            "A life decision that you doubted later",
+            "A time when you felt pure happiness",
+            "A time you stood up for yourself",
+            "A tough financial situation you overcame",
+            "A time you felt extremely lonely",
+            "Your most embarrassing work moment",
+            "A day that changed your life forever",
+            "The funniest misunderstanding you've had",
+            "A habit you struggled to change",
+            "A time you felt overwhelmed by responsibilities",
+            "A time when you had to take a big risk",
+            "The best compliment you’ve ever received",
+            "A moment you felt deeply connected to nature",
+            "A time when you truly felt successful",
+            "A time when you had to apologize sincerely",
+            "A secret you finally revealed after many years",
+            "A childhood item you still have",
+            "The most valuable advice you ever received",
+            "A time you felt completely at peace",
+            "A time when you felt betrayed",
+            "A funny incident with a sibling or cousin",
+            "The most inspiring person you ever met",
+            "A time you made a difficult but right choice",
+            "A time you experienced culture shock",
+            "A time when a stranger changed your day",
+            "A time when you gave up on something",
+            "The first time you had to act like an adult",
+            "A time when you were really scared but acted brave",
+            "A funny memory from college days",
+            "A time when you felt extremely grateful",
+            "A time you had to forgive someone",
+            "A time when you had to ask for forgiveness",
+            "The best road trip memory",
+            "A moment when you had to be strong for others",
+            "A time when you helped a friend through a tough time",
+            "A time when you felt proud of your spouse",
+            "A tradition in your family that you love",
+            "A time when you failed but learned something",
+            "A surprise that left you speechless",
+            "A time you stood up for a friend",
+            "A time when you felt like giving up",
+            "A moment when you experienced deep love",
+            "A time when a pet made you feel better",
+            "A skill you wish you had learned earlier",
+            "A moment you knew you were on the right path",
+            "A childhood dream you actually fulfilled",
+            "A time when you felt pure joy in simplicity",
+            "A time you had to choose between heart and mind",
+            "A time when you had to say 'no' even when it was hard",
+            "A time you faced rejection and how you handled it",
+            "A time when you had to start over from scratch",
+            "A time when a song brought back deep emotions",
+            "A time when you made someone else’s day better",
+            "A memory that always makes you smile",
+            "The first time you felt independent",
+            "A childhood story your parents still tell",
+            "A time when you felt stuck in life",
+            "A school teacher who impacted your life",
+            "The first time you rode a bicycle",
+            "A festival moment you want to relive",
+            "A time when you were caught doing something mischievous",
+            "A time when you stood up to authority",
+            "A time you felt misunderstood",
+            "The first time you faced a major fear",
+            "A childhood superstition you believed in",
+            "A major change in your friend circle",
+            "A time when you met a celebrity",
+            "A time when you lost something important",
+            "A favorite memory with grandparents",
+            "A time you broke the rules",
+            "A time when a stranger helped you",
+            "A memory of your first mobile phone",
+            "A time when you felt out of place",
+            "A time when you felt nostalgic",
+            "The first time you tried to cook",
+            "A moment that changed your perspective on life",
+            "A childhood accident that scared you",
+            "A time when you met your best friend",
+            "A time when you got lost in an unfamiliar place",
+            "A time when you helped a stranger",
+            "A surprise you planned for someone",
+            "A time you received an unexpected gift",
+            "A road trip memory with friends",
+            "A childhood prank you played on someone",
+            "A time when you achieved something nobody expected",
+            "A time when you made a difficult sacrifice",
+            "The happiest moment in your childhood",
+            "A time when you felt homesick",
+            "A special friendship that faded over time",
+            "A time when you felt like a hero",
+            "A time you spoke in front of a large crowd",
+            "A time when you had to learn something the hard way",
+            "A funny misunderstanding in another language",
+            "A time when you received great advice",
+            "A time when you saved up for something special",
+            "A time when you had to make an important decision quickly",
+            "A moment when you felt completely free",
+            "A childhood cartoon you were obsessed with",
+            "A time when you felt truly creative",
+            "A time when a dream of yours came true",
+            "A memory of your first bicycle ride",
+            "A memory of your first solo travel",
+            "A time you handled an emergency",
+            "A memory that makes you emotional",
+            "A time when you reunited with someone after years"
+        ];
+
+        let currentIndex = 0;
+
+        // Start or Next Card
+        function nextCard() {
+            document.getElementById("nextBtn").textContent = "Next memory";
+            currentIndex++;
+            if (currentIndex >= moments.length) {
+                document.getElementById("card-content").textContent = "You've gone through all the moments!";
+                // Remove the button after all cards are completed
+                document.getElementById("nextBtn").style.display = "none";
+            } else {
+                document.getElementById("card-content").textContent = moments[currentIndex];
+            }
+        }
+
+        // End Game (Close the game)
+        function endGame() {
+            // Reset the game state
+            currentIndex = 0;
+            document.getElementById("nextBtn").style.display = "block";  // Re-enable the button
+            document.getElementById("nextBtn").textContent = "Start Game";
+            document.getElementById("card-content").textContent = "Click 'Start Game' to begin!";
+        }
+    </script>
+
 </body>
+
 </html>
